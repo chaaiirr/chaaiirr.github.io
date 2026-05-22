@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F9F4EE"/>
+  <!-- Grid lines -->
+  <line x1="80" y1="220" x2="320" y2="220" stroke="#E8E0D5" stroke-width="1"/>
+  <line x1="80" y1="185" x2="320" y2="185" stroke="#E8E0D5" stroke-width="1"/>
+  <line x1="80" y1="150" x2="320" y2="150" stroke="#E8E0D5" stroke-width="1"/>
+  <line x1="80" y1="115" x2="320" y2="115" stroke="#E8E0D5" stroke-width="1"/>
+  <line x1="80" y1="80" x2="320" y2="80" stroke="#E8E0D5" stroke-width="1"/>
+  <!-- Axes -->
+  <line x1="80" y1="220" x2="80" y2="75" stroke="#C4573A" stroke-width="1.5"/>
+  <line x1="80" y1="220" x2="325" y2="220" stroke="#C4573A" stroke-width="1.5"/>
+  <!-- Stock line (lime) -->
+  <polyline points="80,190 120,175 160,155 180,165 210,120 240,108 270,125 300,95 320,88" fill="none" stroke="#C3E41D" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Quant line (terracotta) -->
+  <polyline points="80,205 120,195 160,185 180,190 210,165 240,150 270,160 300,140 320,132" fill="none" stroke="#C4573A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,3"/>
+  <!-- Data points on stock line -->
+  <circle cx="210" cy="120" r="4" fill="#C3E41D"/>
+  <circle cx="300" cy="95" r="4" fill="#C3E41D"/>
+  <circle cx="320" cy="88" r="4" fill="#C3E41D"/>
+  <!-- Legend -->
+  <line x1="90" y1="248" x2="110" y2="248" stroke="#C3E41D" stroke-width="2.5"/>
+  <text x="115" y="252" font-family="Arial, sans-serif" font-size="9" fill="#888888">Stock Analyser</text>
+  <line x1="195" y1="248" x2="215" y2="248" stroke="#C4573A" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="220" y="252" font-family="Arial, sans-serif" font-size="9" fill="#888888">Quant Signals</text>
+</svg>

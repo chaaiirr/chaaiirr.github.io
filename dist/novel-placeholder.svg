@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#F9F4EE"/>
+  <!-- Book left page -->
+  <path d="M130 80 Q170 75 200 80 L200 220 Q170 215 130 220 Z" fill="none" stroke="#C4573A" stroke-width="2.5"/>
+  <!-- Book right page -->
+  <path d="M270 80 Q230 75 200 80 L200 220 Q230 215 270 220 Z" fill="none" stroke="#C4573A" stroke-width="2.5"/>
+  <!-- Spine -->
+  <line x1="200" y1="80" x2="200" y2="220" stroke="#C4573A" stroke-width="2"/>
+  <!-- Left page lines -->
+  <line x1="145" y1="108" x2="190" y2="106" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="145" y1="120" x2="190" y2="118" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="145" y1="132" x2="190" y2="130" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="145" y1="144" x2="190" y2="142" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="145" y1="156" x2="190" y2="154" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="145" y1="168" x2="175" y2="167" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <!-- Right page lines -->
+  <line x1="210" y1="106" x2="255" y2="108" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="210" y1="118" x2="255" y2="120" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="210" y1="130" x2="255" y2="132" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="210" y1="142" x2="255" y2="144" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="210" y1="154" x2="255" y2="156" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <line x1="210" y1="167" x2="240" y2="168" stroke="#C4573A" stroke-width="1.2" opacity="0.5"/>
+  <!-- Label -->
+  <text x="200" y="252" font-family="Arial, sans-serif" font-size="10" letter-spacing="3" fill="#888888" text-anchor="middle">NOVEL SUMMARISER</text>
+</svg>
