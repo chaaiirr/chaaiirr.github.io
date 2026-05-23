@@ -33,7 +33,7 @@ const EXPERIENCE = [
   { role: "Project & VJ Intern", org: "EnjoyMusic (AI Startup)", years: "Nov–Dec 2025" },
   { role: "Information Security Intern", org: "Singapore Airlines", years: "Sep 2021–Feb 2022" },
   { role: "Exchange Programme", org: "Zhejiang University", years: "Sep–Dec 2025" },
-  { role: "Cohort Class Exco", org: "SUTD", years: "2024–present" },
+  { role: "Cohort Class Exco", org: "SUTD", years: "Sep 2024–May 2025" },
   { role: "Touch Rugby Club Secretary", org: "SUTD", years: "Jan 2025–Jan 2026" },
 ]
 
