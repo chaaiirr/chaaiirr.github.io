@@ -47,7 +47,7 @@ export function BlurText({ text }: { text: string }) {
           transition={{ delay: i * 0.06, duration: 0.5, ease: "easeOut" }}
           style={{ display: "inline-block" }}
         >
-          {char}
+          {char === " " ? " " : char}
         </motion.span>
       ))}
     </span>
