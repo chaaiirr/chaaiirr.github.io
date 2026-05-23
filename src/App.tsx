@@ -135,8 +135,8 @@ function Hero() {
           <img src={PHOTO_URL} alt="Sheil" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%", display: "block" }} />
         </motion.div>
 
-        <h1 style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif", fontWeight: 900, fontSize: "clamp(64px, 14vw, 148px)", color: C.accent, letterSpacing: "-4px", lineHeight: 0.9, textTransform: "uppercase", userSelect: "none", margin: 0, textAlign: "center" }}>
-          <BlurText text="SHEIL" />
+        <h1 style={{ fontFamily: "'Arial Black', 'Helvetica Neue', sans-serif", fontWeight: 900, fontSize: "clamp(40px, 9vw, 104px)", color: C.accent, letterSpacing: "-3px", lineHeight: 0.9, textTransform: "uppercase", userSelect: "none", margin: 0, textAlign: "center" }}>
+          <BlurText text="SHEIL MISTRY" />
         </h1>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.6 }} style={{ marginTop: 36, fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: 15, color: C.muted, letterSpacing: "0.3px", textAlign: "center" }}>
