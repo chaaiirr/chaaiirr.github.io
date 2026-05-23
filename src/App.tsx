@@ -115,7 +115,7 @@ function Nav() {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
-  const { C } = useTheme()
+  const { C, dark } = useTheme()
   const [bounce, setBounce] = useState(false)
 
   useEffect(() => {
@@ -125,7 +125,7 @@ function Hero() {
 
   return (
     <section id="home" style={{ minHeight: "100vh", background: C.bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: 80, paddingBottom: 40, position: "relative" }}>
-      <ShaderAnimation />
+      <ShaderAnimation dark={dark} />
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}

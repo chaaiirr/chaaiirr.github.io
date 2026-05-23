@@ -1,12 +1,10 @@
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
 
-export function ShaderAnimation() {
+export function ShaderAnimation({ dark }: { dark: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const sceneRef = useRef<{
-    renderer: THREE.WebGLRenderer
-    animationId: number
-  } | null>(null)
+  const uniformsRef = useRef<{ time: { value: number }; resolution: { value: THREE.Vector2 }; darkMode: { value: number } } | null>(null)
+  const sceneRef = useRef<{ renderer: THREE.WebGLRenderer; animationId: number } | null>(null)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -18,14 +16,11 @@ export function ShaderAnimation() {
       }
     `
 
-    // Light theme: cream base (#F5F5F0) with subtle moving lines
     const fragmentShader = `
-      #define TWO_PI 6.2831853072
-      #define PI 3.14159265359
-
       precision highp float;
       uniform vec2 resolution;
       uniform float time;
+      uniform float darkMode;
 
       void main(void) {
         vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
@@ -43,9 +38,14 @@ export function ShaderAnimation() {
           }
         }
 
-        // Cream background #F5F5F0 = vec3(0.961, 0.961, 0.941)
-        vec3 bg = vec3(0.961, 0.961, 0.941);
-        vec3 final = bg - color * 0.08;
+        // Light: #F5F5F0 = vec3(0.961, 0.961, 0.941)
+        // Dark:  #111110 = vec3(0.067, 0.067, 0.063)
+        vec3 lightBg = vec3(0.961, 0.961, 0.941);
+        vec3 darkBg  = vec3(0.067, 0.067, 0.063);
+        vec3 bg = mix(lightBg, darkBg, darkMode);
+
+        float lineStrength = mix(0.08, 0.12, darkMode);
+        vec3 final = bg - color * lineStrength;
         gl_FragColor = vec4(clamp(final, 0.0, 1.0), 1.0);
       }
     `
@@ -59,7 +59,9 @@ export function ShaderAnimation() {
     const uniforms = {
       time: { value: 1.0 },
       resolution: { value: new THREE.Vector2() },
+      darkMode: { value: dark ? 1.0 : 0.0 },
     }
+    uniformsRef.current = uniforms
 
     const material = new THREE.ShaderMaterial({ uniforms, vertexShader, fragmentShader })
     scene.add(new THREE.Mesh(geometry, material))
@@ -98,15 +100,17 @@ export function ShaderAnimation() {
     }
   }, [])
 
+  // Update darkMode uniform whenever dark prop changes (no remount needed)
+  useEffect(() => {
+    if (uniformsRef.current) {
+      uniformsRef.current.darkMode.value = dark ? 1.0 : 0.0
+    }
+  }, [dark])
+
   return (
     <div
       ref={containerRef}
-      style={{
-        position: "absolute",
-        inset: 0,
-        zIndex: 0,
-        overflow: "hidden",
-      }}
+      style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}
     />
   )
 }
